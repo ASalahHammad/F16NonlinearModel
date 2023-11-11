@@ -1,0 +1,112 @@
+function Propparams() 
+% M
+n = 1;
+elems(n) = Simulink.BusElement;
+elems(n).Name = 'M';
+elems(n).Dimensions = [6 1];
+elems(n).DimensionsMode = 'Fixed';
+elems(n).DataType = 'double';
+elems(n).SampleTime = -1;
+elems(n).Complexity = 'real';
+elems(n).Min = [];
+elems(n).Max = [];
+elems(n).DocUnits = '';
+elems(n).Description = 'Mach number';
+n = n+1;
+% h
+elems(n) = Simulink.BusElement;
+elems(n).Name = 'h';
+elems(n).Dimensions = [1 6];
+elems(n).DimensionsMode = 'Fixed';
+elems(n).DataType = 'double';
+elems(n).SampleTime = -1;
+elems(n).Complexity = 'real';
+elems(n).Min = [];
+elems(n).Max = [];
+elems(n).DocUnits = 'm';
+elems(n).Description = 'Height';
+n = n+1;
+% Tidle
+elems(n) = Simulink.BusElement;
+elems(n).Name = 'Tidle';
+elems(n).Dimensions = [6 6];
+elems(n).DimensionsMode = 'Fixed';
+elems(n).DataType = 'double';
+elems(n).SampleTime = -1;
+elems(n).Complexity = 'real';
+elems(n).Min = [];
+elems(n).Max = [];
+elems(n).DocUnits = 'N';
+elems(n).Description = 'Idle thrust';
+n = n+1;
+% Tmil
+elems(n) = Simulink.BusElement;
+elems(n).Name = 'Tmil';
+elems(n).Dimensions = [6 6];
+elems(n).DimensionsMode = 'Fixed';
+elems(n).DataType = 'double';
+elems(n).SampleTime = -1;
+elems(n).Complexity = 'real';
+elems(n).Min = [];
+elems(n).Max = [];
+elems(n).DocUnits = 'N';
+elems(n).Description = 'Military thrust';
+n = n+1;
+% Tmax
+elems(n) = Simulink.BusElement;
+elems(n).Name = 'Tmax';
+elems(n).Dimensions = [6 6];
+elems(n).DimensionsMode = 'Fixed';
+elems(n).DataType = 'double';
+elems(n).SampleTime = -1;
+elems(n).Complexity = 'real';
+elems(n).Min = [];
+elems(n).Max = [];
+elems(n).DocUnits = 'N';
+elems(n).Description = 'Max thrust';
+n = n+1;
+% hx
+elems(n) = Simulink.BusElement;
+elems(n).Name = 'hx';
+elems(n).Dimensions = 1;
+elems(n).DimensionsMode = 'Fixed';
+elems(n).DataType = 'double';
+elems(n).SampleTime = -1;
+elems(n).Complexity = 'real';
+elems(n).Min = [];
+elems(n).Max = [];
+elems(n).DocUnits = 'kg*m^2/s';
+elems(n).Description = 'Angular momentum in X body-axes';
+n = n+1;
+% hy
+elems(n) = Simulink.BusElement;
+elems(n).Name = 'hy';
+elems(n).Dimensions = 1;
+elems(n).DimensionsMode = 'Fixed';
+elems(n).DataType = 'double';
+elems(n).SampleTime = -1;
+elems(n).Complexity = 'real';
+elems(n).Min = [];
+elems(n).Max = [];
+elems(n).DocUnits = 'kg*m^2/s';
+elems(n).Description = 'Angular momentum in Y body-axes';
+n = n+1;
+% hz
+elems(n) = Simulink.BusElement;
+elems(n).Name = 'hz';
+elems(n).Dimensions = 1;
+elems(n).DimensionsMode = 'Fixed';
+elems(n).DataType = 'double';
+elems(n).SampleTime = -1;
+elems(n).Complexity = 'real';
+elems(n).Min = [];
+elems(n).Max = [];
+elems(n).DocUnits = 'kg*m^2/s';
+elems(n).Description = 'Angular momentum in Z body-axes';
+% create bus object
+propparams = Simulink.Bus;
+propparams.Description = 'Propulsion parameters';
+propparams.DataScope = 'Auto';
+propparams.Alignment = -1;
+propparams.Elements = elems;
+assignin('base','propparams', propparams);
